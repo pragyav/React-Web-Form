@@ -1,0 +1,85 @@
+.primaryskill {
+  width: 100%;
+  padding: 2em;
+  display: flex;
+}
+
+.skill {
+  background: #454e57;
+  border: 1px solid white;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2em;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin: 2em 0 8em 0;
+  padding: 1em;
+}
+
+input[type="radio"] {
+  opacity: 0;
+}
+
+input[type="radio"]:checked + label {
+  background: #047cc0;
+}
+
+.experience {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#discipline {
+  flex: 1 1 45%;
+  padding: 1em;
+}
+
+#working {
+  flex: 1 1 45%;
+  padding: 1em;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  display: block;
+}
+
+input[type="checkbox"] + label:before {
+  border: 1px solid #fff;
+  content: "\00a0";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0 0.25em 0 0;
+  padding: 0;
+  vertical-align: top;
+  width: 16px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label:before {
+  background: #fff;
+  color: #333;
+  content: "\2713";
+  text-align: center;
+  cursor: pointer;
+}
+
+.delBtn {
+  color: red;
+  display: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+#addexp,
+#addBtn {
+  margin-top: 10px;
+  display: inline-block;
+}
+
+label:hover .delBtn {
+  color: red;
+  display: inline-block;
+}
