@@ -31,3 +31,19 @@
 .quarter-zip {
   flex: 1 1 24%;
 }
+
+input[type="text"].invalid {
+  border-color: #ff3838; 
+}
+
+input[type="email"].invalid {
+  border-color: #ff3838; 
+}
+
+input[type="url"].invalid {
+  border-color: #ff3838; 
+}
+
+.error-msg{
+  color:#ff3838;  
+}

@@ -58,3 +58,7 @@ button.submitBtn {
     letter-spacing: 0;    
     padding: 1em;    
 }
+
+button.submitBtn:disabled {
+  cursor: not-allowed
+}
