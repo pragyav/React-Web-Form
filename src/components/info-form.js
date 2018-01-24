@@ -1,28 +1,20 @@
 import React, { Component } from "react";
 import "../styles/info-form.css";
+import validator from 'validator';
 
-const validate = (name, phone, email1, email2, address, city, state, country, zipcode,    how_did_you_hear) => {
-  const nameReg = /^[a-zA-Z][a-zA-Z0-9-_.\s]{2,20}/;
-  const phoneReg = /^(\+|00)358-?0?(457|50|4[0-9])-?\d{7}/;
-  const emailReg = /^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/;
-  const addressReg = /\w+(\s\w+)*/; 
-  const cityReg = /[a-zA-Z]{2,}/;
-  const stateReg = /[a-zA-Z]{2,}/;
-  const countryReg = /[a-zA-Z]{2,}/;
-  const zipcodeReg = /[0-9]{5}/;
-  const how_did_you_hearReg = /\w+(\s\w+)*/;
+const validate = (name, phone, email1, email2, address, city, state, country, zipcode, how_did_you_hear) => {
 
   return {   
-    name: !nameReg.test(name) ? 'Not a valid name !' : '',
-    phone: !phoneReg.test(phone) ? 'Not a valid phone number !' : '',
-    email1: !emailReg.test(email1) ? 'Not a valid email !' : '',
-    email2: !emailReg.test(email2) ? 'Please re-enter email !' :'',
-    address: !addressReg.test(address) ? 'Not a valid address !' : '',
-    city: !cityReg.test(city) ? 'Not a valid city !' : '',
-    state: !stateReg.test(state) ? 'Not a valid state !' : '',
-    country: !countryReg.test(country) ? 'Not a valid country !' : '',
-    zipcode: !zipcodeReg.test(zipcode) ? 'Not a valid zipcode !' : '',
-    how_did_you_hear: !how_did_you_hearReg.test(how_did_you_hear) ? 'Please enter the details *' : ''
+    name: validator.isAlphanumeric(name.replace(/\s/g, '')) ? '' : 'Not a valid name !',   
+    phone: validator.isMobilePhone(phone, 'fi-FI') ? '' : 'Not a valid phone number !',    
+    email1: validator.isEmail(email1) ? '' : 'Not a valid email !',
+    email2: validator.equals(email2, email1) ? '' : 'Not a matched email !',    
+    address: validator.isAlphanumeric(address.replace(/\s/g, '')) ? '' : 'Not a valid address !',
+    city: validator.isAlpha(city.replace(/\s/g, '')) ? '' : 'Not a valid city !',
+    state: validator.isAlpha(state.replace(/\s/g, '')) ? '' : 'Not a valid state !',
+    country: validator.isAlpha(country.replace(/\s/g, '')) ? '' : 'Not a valid country !',
+    zipcode: validator.isNumeric(zipcode) ? '' : 'Not a valid zipcode !',
+    how_did_you_hear: validator.isAlphanumeric(how_did_you_hear.replace(/\s/g, '')) ? '' : 'Please enter the details *'   
   };
 }
 
@@ -62,7 +54,7 @@ class InfoForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log('submit');
+    console.log('Form submitted successfully!');
   }
 
   handleBlur(e) {
