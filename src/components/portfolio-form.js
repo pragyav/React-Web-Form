@@ -34,8 +34,7 @@ class PortfolioForm extends Component {
               )} />
         </div>
 
-        <button type="submit" value="Submit" className="portfolioSubmitBtn" id="confirm">
-          Submit
+        <button type="submit" value="Submit" className="portfolioSubmitBtn" id="confirm">   Submit
         </button>
     </form>
     );

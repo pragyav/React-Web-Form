@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
-import InfoForm from './components/info-form';
-import SkillsForm from './components/skills-form'
-import PortfolioForm from './components/portfolio-form'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import MainLayout from './components/mainLayout';
 import './App.css';
 
 class App extends Component {  
   render() {
-    return (       
+    return (              
         <div className="page">
-            <div className="header">
-              <h2>Let's talk</h2>
-              <p>Think you have what it takes? Show us.</p>
-            </div>
-           <InfoForm  />   
-           <SkillsForm />
-           <PortfolioForm />      
-        </div>     
-      );
+          <BrowserRouter>
+            <div>     
+              <Switch>            
+                <Route path="/home" component= {MainLayout} />
+                <Route exact path="/" render = {() => <Redirect to="/home"/>} />
+                <Route render = {() => <h1> 404 Page Not Found! </h1>} />
+              </Switch>
+            </div>     
+          </BrowserRouter> 
+        </div>            
+    );
   }
 }
 

@@ -1,0 +1,43 @@
+.menu {
+  background: #fff;  
+  display: flex;
+  justify-content: flex-start;
+}
+
+img {
+    width: 150px;
+    height: 50px;
+    margin: 15px;
+}
+
+.flex-container {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-basis: 90%;
+}
+
+.flex-item { 
+    background-color:#454e57;     
+    list-style-type: none;
+    flex: 1 1 10%;
+    border: 2px solid #f2f4f5;
+    border-radius: 5px;   
+    font-size: 1em;
+    height: 36px;
+    line-height: 36px;
+    margin: 0;   
+    text-align: center;   
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: sans-serif;    
+}
+
+.flex-item a {
+  color: white;
+  text-decoration: none;
+  width: inherit;
+  height: inherit;
+  display: block;
+}

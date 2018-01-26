@@ -225,13 +225,14 @@ class InfoForm extends Component {
           onChange={e => this.setState({ how_did_you_hear: e.target.value })} 
         />
         {showErrors.how_did_you_hear && <span className="error-msg">{errors.how_did_you_hear}</span>}
-      </div>
+      </div>        
+
       <button 
         type="submit" 
         value="Submit" 
         className="submitBtn"        
         disabled={Object.keys(errors).some((key) => errors[key])}>
-          Submit
+        Submit
       </button>
     </form>
     );

@@ -146,7 +146,7 @@ class SkillsForm extends Component {
           </div>
         </div>
 
-        <button type="submit" value="Submit" className="submitBtn" id="confirm">
+        <button type="submit" value="Submit" className="submitBtn" id="confirm">          
           Submit
         </button>
     </form>
