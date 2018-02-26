@@ -1,4 +1,4 @@
-React Web Form, Integrify Task 6
+React Web Form, Integrify
 ____________________________________________________
 
 [![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](http://standardjs.com)
